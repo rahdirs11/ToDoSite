@@ -1,0 +1,16 @@
+{% extends "layout.html" %} {% import "bootstrap/wtf.html" as wtf %} {% block title %} TO-DO {% if title %} - {{ title }} {% endif %} {% endblock %}{% block content %}
+<div class="container">
+    <!--Form to add a new list-->
+    <form action="" method="POST">
+        {{ form.hidden_tag() }}
+        <div class="mb-3 mx-5 form-check">
+            {{ wtf.form_field(form.task, placeholder="New List Name", class="form-control") }}
+        </div>
+        <div class="mb-3 mx-5 form-check">
+            {{ wtf.form_field(form.add, class="btn btn-alert bg-primary") }}
+        </div>
+    </form>
+
+
+</div>
+{% endblock %}

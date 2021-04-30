@@ -1,0 +1,29 @@
+{% extends "layout.html" %}
+{% import "bootstrap/wtf.html" as wtf %}
+{% block title %}
+    TO-DO - User Login
+{% endblock title %}
+
+{% block content %}
+
+<h1 class="my-5 mx-5 bg-primary px-5 py-3 rounded-pill text-end" style="width: 40%">Login</h1>
+<br><br>
+<div class="container border-dark border px-2 py-4 bg-light rounded-3 ">
+    <form method="post" action="">
+        {{ form.hidden_tag() }}
+        <div class="mb-4 mx-5 form-check ">
+            {{ wtf.form_field(form.email, placeholder="Enter your email ", class="form-control ") }}
+        </div>
+
+        <div class="mb-4 mx-5 form-check ">
+            {{ wtf.form_field(form.password, placeholder="Enter your password ", class="form-control ") }}
+        </div>
+
+        <div class="mb-4 mx-5 form-check ">
+            {{ wtf.form_field(form.login, class="btn btn-primary ") }} {% if signup %}
+            <a href="{{ url_for( 'register') }} " class="btn btn-danger " style="float: right ">New User? </a>{% endif %}
+        </div>
+    </form>
+</div>
+
+{% endblock %}

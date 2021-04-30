@@ -1,0 +1,98 @@
+{% extends "layout.html" %} {% import "bootstrap/wtf.html" as wtf %} {% block title %} TO-DO {% if title %} - {{ title }} {% endif %} {% endblock %} {% block content %}
+
+<h1 class="my-5 mx-5 bg-primary px-5 py-3 rounded-pill text-end" style="width: 40%">Sign up!</h1>
+
+
+<div class="container border-dark border px-2 py-4 bg-light rounded-3">
+    <form action="" method="post">
+        {{ form.hidden_tag() }}
+        <div class="mb-4 mx-5 form-check ">
+            {{ wtf.form_field(form.firstName) }}
+        </div>
+        <div class="mb-4 mx-5 form-check ">
+            {{ wtf.form_field(form.lastName) }}
+        </div>
+        <div class="mb-4 mx-5 form-check ">
+            {{ wtf.form_field(form.username) }}
+        </div>
+        <div class="mb-4 mx-5 form-check ">
+            {{ wtf.form_field(form.email) }}
+        </div>
+
+        <div class="mb-4 mx-5 form-check ">
+            {{ wtf.form_field(form.password) }}
+        </div>
+        <div class="mb-4 mx-5 form-check ">
+            {{ wtf.form_field(form.confirmPassword) }}
+        </div>
+        <div class="mb-4 mx-5 form-check ">
+            {{ wtf.form_field(form.submit, class="btn btn-primary ") }}
+        </div>
+    </form>
+</div>
+
+
+
+
+
+<!-- 
+<form method="post " action=" ">
+    {{ form.hidden_tag() }}
+    <fieldset>
+        {{ form.firstName.label }} {% if form.firstName.errors %} {{ form.firstName }}
+        <div>
+            {% for error in form.firstName.errors %}
+            <span>{{ error }}</span> {% endfor %}
+        </div>
+        {% else %} {{ form.firstName }} {% endif %}
+    </fieldset>
+
+    <fieldset>
+        {{ form.lastName.label }} {% if form.lastName.errors %} {{ form.lastName }}
+        <div>
+            {% for error in form.lastName.errors %}
+            <span>{{ error }}</span> {% endfor %}
+        </div>
+        {% else %} {{ form.lastName }} {% endif %}
+    </fieldset>
+
+    <fieldset>
+        {{ form.username.label }} {% if form.username.errors %} {{ form.username }}
+        <div>
+            {% for error in form.username.errors %}
+            <span>{{ error }}</span> {% endfor %}
+        </div>
+        {% else %} {{ form.username }} {% endif %}
+    </fieldset>
+
+    <fieldset>
+        {{ form.email.label }} {% if form.email.errors %} {{ form.email }}
+        <div>
+            {% for error in form.email.errors %}
+            <span>{{ error }}</span> {% endfor %}
+        </div>
+        {% else %} {{ form.email }} {% endif %}
+    </fieldset>
+
+    <fieldset>
+        {{ form.password.label }} {% if form.password.errors %} {{ form.password }}
+        <div>
+            {% for error in form.password.errors %}
+            <span>{{ error }}</span> {% endfor %}
+        </div>
+        {% else %} {{ form.password }} {% endif %}
+    </fieldset>
+
+    <fieldset>
+        {{ form.confirmPassword.label }} {% if form.confirmPassword.errors %} {{ form.confirmPassword }}
+        <div>
+            {% for error in form.confirmPassword.errors %}
+            <span>{{ error }}</span> {% endfor %}
+        </div>
+        {% else %} {{ form.confirmPassword }} {% endif %}
+    </fieldset>
+
+    {{ form.submit }}
+</form> -->
+
+{% endblock %}
